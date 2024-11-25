@@ -1,9 +1,8 @@
 /* Since TweetNacl doesn't come with a `randombytes` implementation,
 we're using the one from PHP.*/
 #include "php_snuffleupagus.h"
-#include "ext/standard/php_random.h"
 
-void randombytes(unsigned char *x, unsigned long long xlen) {
+static void randombytes(unsigned char *x, unsigned long long xlen) {
   assert(SIZE_MAX >= ULLONG_MAX);  // max(size_t) > max(ull) ?
   php_random_bytes(x, xlen, 1);
 }

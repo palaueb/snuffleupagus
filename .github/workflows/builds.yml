@@ -11,7 +11,8 @@ jobs:
     strategy:
         matrix:
           container:
-            - php:8.3-rc
+            - php:8.4-rc
+            - php:8.3
             - php:8.2
             - php:8.1
             - php:8.0
@@ -19,7 +20,6 @@ jobs:
             - php:7.3
             - php:7.2
             - php:7.1
-            - php:7.0
     container: ${{ matrix.container }}
     steps:
       - name: Checkout code
